@@ -1,4 +1,4 @@
-public class pessoa {
+public class Pessoa {
     //Atributos
     public String nome;
     public Integer idade;
