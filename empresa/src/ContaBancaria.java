@@ -1,9 +1,9 @@
 public class ContaBancaria {
-    //Atributos
+    //Atributos;
     public Double saldo;
     public String titular;
 
-    //metodo constrututor
+    //metodo constrututor;
     public ContaBancaria(
             String titular,
             Double saldoInicial
@@ -16,11 +16,11 @@ public class ContaBancaria {
     public void depositar(Double quantia){
         saldo += quantia;
     }
-    //metódo para sacar
+    //metódo para sacar;
     public void sacar(Double quantia){
         saldo -= quantia;
     }
-    //metódo para exibir
+    //metódo para exibir;
     public void exibirSaldo(){
         System.out.println("Titular: " + titular);
         System.out.println("Saldo Atual:R$ " + saldo);
