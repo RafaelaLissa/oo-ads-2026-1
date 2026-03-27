@@ -114,31 +114,58 @@ public class Main {
 //        System.out.println(f.exibirDados());
 //    }
     public static void teste03(){
-        //criando contas bancarias
-        ContaEspecial conta1 = new ContaEspecial("Lissa",1000.0, 500.0);
-        ContaEspecial conta2 = new ContaEspecial("Jimin",2000.0, 500.0);
-        ContaEspecial conta3 = new ContaEspecial("Austin",5000.0, 450.0);
-        //operações da conta1
-        conta1.depositar(200.0);
-        conta1.sacar(100.0);
-        //operações da conta2
-        conta2.depositar(250.0);
-        conta2.sacar(100.0);
-        //operações da conta3
-        conta3.depositar(300.0);
-        conta3.sacar(160.0);
+        // Criando três contas bancárias
+        ContaBancaria conta1 = new ContaBancaria("Lissa", 1000.0);
+        ContaBancaria conta2 = new ContaBancaria("Jimin", 2000.0);
+        ContaBancaria conta3 = new ContaBancaria("Austin", 5000.0);
 
-        //Exibir resultados
+        // Operações na conta 1
+        conta1.depositar(200.0);
+        conta1.sacar(150.0);
+
+        // Operações na conta 2
+        conta2.depositar(300.0);
+        conta2.sacar(100.0);
+
+        // Operações na conta 3
+        conta3.sacar(500.0);
+        conta3.depositar(1000.0);
+
+        // Exibindo saldo final de cada conta
         System.out.println("\n--- Conta 1 ---");
-        conta1.exibirSaldoReal();
         conta1.exibirSaldo();
 
         System.out.println("\n--- Conta 2 ---");
-        conta2.exibirSaldoReal();
         conta2.exibirSaldo();
 
-        System.out.println("\n--- Conta 3 ---");
-        conta3.exibirSaldoReal();
+        System.out.println("\n--- Conta 3---");
         conta3.exibirSaldo();
+
+        //criando contas especiais
+        ContaEspecial contaE1  = new ContaEspecial("Lissa",1000.0, 500.0);
+        ContaEspecial contaE2 = new ContaEspecial("Jimin",2000.0, 500.0);
+        ContaEspecial contaE3 = new ContaEspecial("Austin",5000.0, 450.0);
+        //operações da conta1
+        contaE1.depositar(200.0);
+        contaE1.sacar(100.0);
+        //operações da conta2
+        contaE2.depositar(250.0);
+        contaE2.sacar(100.0);
+        //operações da conta3
+        contaE3.depositar(300.0);
+        contaE3.sacar(160.0);
+
+        //Exibir resultados
+        System.out.println("\n--- Conta Especial 1 ---");
+        contaE1.exibirSaldoReal();
+        contaE1.exibirSaldo();
+
+        System.out.println("\n--- Conta Especial 2 ---");
+        contaE2.exibirSaldoReal();
+        contaE2.exibirSaldo();
+
+        System.out.println("\n--- Conta Especial 3 ---");
+        contaE3.exibirSaldoReal();
+        contaE3.exibirSaldo();
     }
 }

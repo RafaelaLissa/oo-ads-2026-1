@@ -12,7 +12,7 @@ public class ContaBancaria {
         this.saldo = saldoInicial;
     }
 
-    //métodos para depositar
+    //métodos para depositar;
     public void depositar(Double quantia){
         saldo += quantia;
     }
