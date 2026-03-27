@@ -24,7 +24,6 @@ public class Pessoa {
         this.email = email;
         this.telefone = telefone;
     }
-
     //Métodos
     public void apresentar(){
         System.out.println("Olá meu nome é "+ nome + "e tenho" + idade + "anos.");
@@ -44,6 +43,5 @@ public class Pessoa {
                 "\nCpf:" + this.cpf +
                 "\nE-mail:" + this.email +
                 "\nTelefone:" + this.telefone;
-
     }
 }
