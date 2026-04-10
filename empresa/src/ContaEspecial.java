@@ -1,24 +1,44 @@
+//public class ContaEspecial extends ContaBancaria {
+//    //atributos;
+//    public double limite;
+//    //método construtor;
+//    public ContaEspecial(
+//            String titular,
+//            Double saldoInicial,
+//            Double limite
+//    ){
+//        super(titular,saldoInicial); //chama construtor da classe pai;
+//        this.limite = limite;
+//    }
+//    @Override
+//    //exibir;
+//    public void exibirSaldo(){
+//        System.out.println("Titular: " + getTitular());
+//        System.out.println("Saldo com limites: " + (getSaldo()+ limite));
+//    }
+//    //saldo real(sem limites);
+//    public void exibirSaldoReal(){
+//        System.out.println("Titular: " + getTitular());
+//        System.out.println("Saldo real: " + getSaldo());
+//    }
+//}
 public class ContaEspecial extends ContaBancaria {
-    //atributos;
-    public double limite;
-    //método construtor;
-    public ContaEspecial(
-            String titular,
-            Double saldoInicial,
-            Double limite
-    ){
-        super(titular,saldoInicial); //chama construtor da classe pai;
+
+    // Atributo
+    Double limite;
+
+    // Construtor personalizado
+    public ContaEspecial(String titular, Double saldoInicial, Double limite) {
+        super(titular, saldoInicial);
         this.limite = limite;
     }
+
     @Override
-    //exibir;
-    public void exibirSaldo(){
-        System.out.println("Titular: " + getTitular());
-        System.out.println("Saldo com limites: " + (getSaldo()+ limite));
+    public void exibirSaldo() {
+        System.out.println("Saldo da conta especial de " + this.titular + " é R$ " + (this.saldo + this.limite));
     }
-    //saldo real(sem limites);
-    public void exibirSaldoReal(){
-        System.out.println("Titular: " + getTitular());
-        System.out.println("Saldo real: " + getSaldo());
+
+    public void exibirSaldoReal() {
+        System.out.println("Saldo (real) da conta especial de " + this.titular + " é R$ " + this.saldo);
     }
 }
