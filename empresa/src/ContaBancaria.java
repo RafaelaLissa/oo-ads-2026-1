@@ -41,6 +41,7 @@ public class ContaBancaria {
     // Atributos
     // Protected: apenas classes do mesmo pacote têm acesso
     protected Double saldo;
+    protected Double saldo = 0.0;
     public String titular;
 
     // Construtor personalizado
