@@ -203,8 +203,28 @@ public class Main {
 //    System.out.println(e4.exibirDados());
 //  }
 //}
+//public static void teste04() {
+//    ContaBancaria c1 = new ContaBancaria("Zeferino Zacarias", 500.00);
+//    c1.exibirSaldo();
+//
+//    c1.sacar(350.00);
+//    c1.exibirSaldo();
+//
+//    // Atributo "saldo" foi privatizado
+//    // Mudanças no saldo agora só podem ser feitas por meio dos
+//    // métodos depositar() e sacar()
+//    //c1.saldo = -100.00;
+//    //c1.exibirSaldo();
+//
+//    c1.depositar(200.00);
+//    c1.exibirSaldo();
+//
+//    ContaBancaria c2 = new ContaBancaria("Yuri Yamashita", -850.00);
+//    c2.exibirSaldo();
+//}
+//}
 public static void teste04() {
-    ContaBancaria c1 = new ContaBancaria("Zeferino Zacarias", 500.00);
+    ContaBancaria c1 = new ContaBancaria(987, "Zeferino Zacarias", 500.00);
     c1.exibirSaldo();
 
     c1.sacar(350.00);
@@ -219,7 +239,11 @@ public static void teste04() {
     c1.depositar(200.00);
     c1.exibirSaldo();
 
-    ContaBancaria c2 = new ContaBancaria("Yuri Yamashita", -850.00);
+    ContaBancaria c2 = new ContaBancaria(654, "Yuri Yamashita", 850.00);
     c2.exibirSaldo();
+
+    c2.setNumConta(40);
+    System.out.println("Conta de %s agora tem o número %d.".formatted(c2.titular, c2.getNumConta()));
+    System.out.println("Conta de %s agora tem o número %d.".formatted(c2.getTitular(), c2.getNumConta()));
 }
 }
