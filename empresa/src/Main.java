@@ -117,53 +117,6 @@ public class Main {
     }
 
     public static void teste03() {
-        ContaBancaria c1 = new ContaBancaria(123,"Adamastor Asdrúbal", 300.00);
-        ContaBancaria c2 = new ContaBancaria(456, "Marieta Moraes", 450.00);
-        ContaBancaria c3 = new ContaBancaria(789, "Pedrolino Pereira", 280.00);
-
-        c1.depositar(150.00);
-        c2.depositar(78.00);
-        c3.depositar(110.00);
-
-        c1.sacar(70.00);
-        c2.sacar(150.00);
-        c3.sacar(44.00);
-
-        c1.exibirSaldo();
-        c2.exibirSaldo();
-        c3.exibirSaldo();
-
-        System.out.println("*".repeat(80));
-
-        ContaEspecial ce1 = new ContaEspecial(1234, "Bertolino Borges", 500.00, 2000.00);
-        ContaEspecial ce2 = new ContaEspecial(5678, "Jeruza Junqueira", 800.00, 1500.00);
-        ContaEspecial ce3 = new ContaEspecial(9012, "Orozina Oliveira", 1000.00, 1000.00);
-
-        ce1.exibirSaldo();
-        ce1.exibirSaldoReal();
-
-        ce2.exibirSaldo();
-        ce2.exibirSaldoReal();
-
-        ce3.exibirSaldo();
-        ce3.exibirSaldoReal();
-
-        ce1.depositar(200.00);
-        ce2.depositar(250.00);
-        ce3.depositar(150.00);
-
-        ce1.sacar(800.00);
-        ce2.sacar(2000.00);
-        ce3.sacar(1100.00);
-
-        ce1.exibirSaldo();
-        ce1.exibirSaldoReal();
-
-        ce2.exibirSaldo();
-        ce2.exibirSaldoReal();
-
-        ce3.exibirSaldo();
-        ce3.exibirSaldoReal();
 //        ContaBancaria c1 = new ContaBancaria(123,"Adamastor Asdrúbal", 300.00);
 //        ContaBancaria c2 = new ContaBancaria(456, "Marieta Moraes", 450.00);
 //        ContaBancaria c3 = new ContaBancaria(789, "Pedrolino Pereira", 280.00);
@@ -276,7 +229,6 @@ public class Main {
     }
 
     public static void teste04() {
-        ContaBancaria c1 = new ContaBancaria(987, "Zeferino Zacarias", 500.00);
 
         Pessoa pessoa1 = new Pessoa(
                 "Zeferino Zacarias",
@@ -286,11 +238,17 @@ public class Main {
                 "(16) 4444-8888"
         );
 
+        CestaTarifas basica = new CestaTarifas("Básica", 10.00);
+
         ContaBancaria c1 = new ContaBancaria(987, pessoa1, 500.00);
+        c1.setCestaTarifas(basica);
+
         c1.exibirSaldo();
 
         c1.sacar(350.00);
         c1.exibirSaldo();
+
+        c1.exibirExtrato();
 
         // Atributo "saldo" foi privatizado
         // Mudanças no saldo agora só podem ser feitas por meio dos
@@ -301,10 +259,10 @@ public class Main {
         c1.depositar(200.00);
         c1.exibirSaldo();
 
-        ContaBancaria c2 = new ContaBancaria(654, "Yuri Yamashita", 850.00);
         Pessoa pessoa2 = new Pessoa(
                 "Yuri Yamashita",
                 15,
+                21,
                 "987.654.321-09",
                 "yuri.yamashita@email.com.br",
                 "(16) 99999-0000"
@@ -315,4 +273,28 @@ public class Main {
 
         c2.setNumConta(40);
         System.out.println("Conta de %s agora tem o número %d.".formatted(c2.getTitular(), c2.getNumConta()));
+
+        System.out.println("-".repeat(80));
+
+        Funcionario func1 = new Funcionario(
+                "Jeruza Junqueira",
+                25,
+                "111.222.333-44",
+                "jeruza@empresa.com.br",
+                "(16) 91111-2222",
+                "1234",
+                "Secretária",
+                3200.00,
+                "Diretoria Financeira"
+        );
+
+        // Criação do clube
+        Clube clubeDeCampo = new Clube("Clube de Campo");
+
+        clubeDeCampo.addSocio(pessoa1);
+        clubeDeCampo.addSocio(func1);
+
+        clubeDeCampo.listSocios();
+
     }
+}
